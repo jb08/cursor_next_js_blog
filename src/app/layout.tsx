@@ -50,7 +50,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body className={inter.variable}>
         <div className="relative flex min-h-screen flex-col">
           <Header />
-          <main className="flex-1">{children}</main>
+          <main className="flex-1 px-4 sm:px-6 md:px-8 py-8 md:py-10">{children}</main>
           <Footer />
         </div>
       </body>

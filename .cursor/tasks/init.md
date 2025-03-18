@@ -365,14 +365,14 @@ Go through each task in the .cursor-tasks file. After you complete each task, up
    - [x] Update the title, description, and other metadata in `src/app/layout.tsx`
 
 2. [x] **Add responsive styling improvements**
-   - [ ] Test all pages on different screen sizes
-   - [ ] Ensure proper spacing and layout on mobile devices
+   - [x] Test all pages on different screen sizes
+   - [x] Ensure proper spacing and layout on mobile devices
 
 3. [ ] **Test blog functionality**
-   - [ ] Verify that the blog listing page shows all published posts
-   - [ ] Verify that the blog post detail page correctly renders markdown content
-   - [ ] Ensure that images load correctly
-   - [ ] Check that categories are displayed correctly
+   - [x] Verify that the blog listing page shows all published posts
+   - [x] Verify that the blog post detail page correctly renders markdown content
+   - [x] Ensure that images load correctly
+   - [x] Check that categories are displayed correctly
 
 4. [ ] **Deploy the blog**
    - [ ] Deploy to Vercel or another hosting platform that supports Next.js
