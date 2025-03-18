@@ -1,7 +1,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import { Header } from '@/components/header'
+import { Header } from '@/components/site-header'
 import { Footer } from '@/components/footer'
 
 const inter = Inter({
@@ -11,18 +11,18 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | My Personal Blog',
-    default: 'My Personal Blog',
+    template: '%s | Tico blog',
+    default: 'Dog lyfe',
   },
-  description: 'A personal blog built with Next.js and Supabase',
+  description: 'Dog blog',
   metadataBase: new URL('http://localhost:3000'),
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: '/',
-    siteName: 'My Personal Blog',
-    title: 'My Personal Blog',
-    description: 'A personal blog built with Next.js and Supabase',
+    siteName: 'Tico blog ',
+    title: 'Dog food blog',
+    description: 'dog food blog',
     images: [
       {
         url: '/og-image.jpg',

@@ -3,11 +3,11 @@ import Image from 'next/image';
 import { Badge } from '@/components/ui/badge';
 import { Post } from '@/lib/api';
 
-interface PostHeaderProps {
+interface HeaderProps {
   post: Post;
 }
 
-export function PostHeader({ post }: PostHeaderProps) {
+export function Header({ post }: HeaderProps) {
   return (
     <div className="space-y-6">
       <div className="space-y-2">
