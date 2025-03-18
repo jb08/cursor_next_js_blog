@@ -4,14 +4,13 @@ import { getPostBySlug } from '@/lib/api'
 import { PostHeader } from '@/components/blog/post-header'
 import { MarkdownRenderer } from '@/components/blog/markdown-renderer'
 
-interface BlogPostPageProps {
-  params: {
-    slug: string
-  }
+type Props = {
+  params: { slug: string }
+  searchParams: { [key: string]: string | string[] | undefined }
 }
 
 // Generate metadata for SEO
-export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = await getPostBySlug(params.slug)
 
   if (!post) {
@@ -47,7 +46,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   }
 }
 
-export default async function BlogPostPage({ params }: BlogPostPageProps) {
+export default async function BlogPostPage({ params }: Props) {
   const post = await getPostBySlug(params.slug)
 
   if (!post) {

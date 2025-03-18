@@ -3,6 +3,7 @@ import remarkGfm from 'remark-gfm'
 import rehypeRaw from 'rehype-raw'
 import rehypeSanitize from 'rehype-sanitize'
 import { cn } from '@/lib/utils'
+import Image from 'next/image'
 
 interface MarkdownRendererProps {
   content: string
@@ -73,11 +74,15 @@ export function MarkdownRenderer({ content, className }: MarkdownRendererProps) 
             </a>
           ),
           img: ({ src, alt }) => (
-            <img
-              src={src}
-              alt={alt}
-              className="rounded-lg border bg-muted transition-colors"
-            />
+            <div className="relative aspect-video my-6">
+              <Image
+                src={src || ''}
+                alt={alt || ''}
+                fill
+                className="rounded-lg object-cover"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 85vw, 1200px"
+              />
+            </div>
           ),
         }}
       >
