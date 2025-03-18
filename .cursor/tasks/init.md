@@ -11,20 +11,20 @@ Go through each task in the .cursor-tasks file. After you complete each task, up
 
 ## 1. Project Setup
 
-1. [ ] **Set up the Supabase client**
-   - [ ] Create a `src/lib/supabase.ts` file to initialize the Supabase client:
-   - [ ] Verify the environment variables are correctly set in `.env.local`
+1. [x] **Set up the Supabase client**
+   - [x] Create a `src/lib/supabase.ts` file to initialize the Supabase client:
+   - [x] Verify the environment variables are correctly set in `.env.local`
 
-2. [ ] **Create database types for TypeScript**
-   - [ ] Create `src/lib/database.ts` file with the type definitions based on our schema:
+2. [x] **Create database types for TypeScript**
+   - [x] Create `src/lib/database.ts` file with the type definitions based on our schema:
 
-3. [ ] **Create utility functions for data fetching**
-   - [ ] Create `src/lib/api.ts` with functions to interact with Supabase: getAllPosts, getPostBySlug and getAllCategories
+3. [x] **Create utility functions for data fetching**
+   - [x] Create `src/lib/api.ts` with functions to interact with Supabase: getAllPosts, getPostBySlug and getAllCategories
 
 ## 2. Set Up Shadcn UI Components
 
-1. [ ] **Install and configure Shadcn UI**
-   - [ ] Run the following commands to set up Shadcn UI:
+1. [x] **Install and configure Shadcn UI**
+   - [x] Run the following commands to set up Shadcn UI:
      ```bash
      npm install @shadcn/ui
      npx shadcn-ui init
@@ -40,7 +40,7 @@ Go through each task in the .cursor-tasks file. After you complete each task, up
      - Utility directory: src/lib/utils
 
 2. [ ] **Install necessary Shadcn UI components**
-   - [ ] Install the card component:
+   - [x] Install the card component:
      ```bash
      npx shadcn@latest init
      ```
@@ -48,7 +48,7 @@ Go through each task in the .cursor-tasks file. After you complete each task, up
      ```bash
      npx shadcn@latest add button
      ```
-   - [ ] Install other necessary components:
+   - [x] Install other necessary components:
      ```bash
      npx shadcn@latest add avatar
      npx shadcn@latest add badge
@@ -56,21 +56,21 @@ Go through each task in the .cursor-tasks file. After you complete each task, up
      ```
 
 3. [ ] **Set up global styles**
-   - [ ] Update `src/app/globals.css` to include your custom styling as needed
+   - [x] Update `src/app/globals.css` to include your custom styling as needed
 
 ## 3. Create Blog UI Components
 
-1. [ ] **Create a markdown renderer component**
-   - [ ] Install necessary packages:
+1. [x] **Create a markdown renderer component**
+   - [x] Install necessary packages:
      ```bash
      npm install react-markdown rehype-raw rehype-sanitize remark-gfm
      ```
-   - [ ] Create `src/components/blog/markdown-renderer.tsx` to render markdown content
+   - [x] Create `src/components/blog/markdown-renderer.tsx` to render markdown content
 
-2. [ ] **Create a blog post card component**
-   - [ ] Create `src/components/blog/post-card.tsx` to render a blog post card
-3. [ ] **Create blog post grid component**
-   - [ ] Create `src/components/blog/post-grid.tsx`, this is an example of a post grid component:
+2. [x] **Create a blog post card component**
+   - [x] Create `src/components/blog/post-card.tsx` to render a blog post card
+3. [x] **Create blog post grid component**
+   - [x] Create `src/components/blog/post-grid.tsx`, this is an example of a post grid component:
       ```typescript
       import React from 'react';
       import { PostCard } from './post-card';
@@ -91,8 +91,8 @@ Go through each task in the .cursor-tasks file. After you complete each task, up
       }
       ```
 
-4. [ ] **Create a blog post header component**
-   - [ ] Create `src/components/blog/post-header.tsx`, this is an example of a post header component:
+4. [x] **Create a blog post header component**
+   - [x] Create `src/components/blog/post-header.tsx`, this is an example of a post header component:
      ```typescript
      import React from 'react';
      import Image from 'next/image';
@@ -141,24 +141,24 @@ Go through each task in the .cursor-tasks file. After you complete each task, up
 
 ## 4. Implement Blog Pages
 
-1. [ ] **Create the blog listing page**
-   - [ ] Create `src/app/blog/page.tsx` to display all blog posts
+1. [x] **Create the blog listing page**
+   - [x] Create `src/app/blog/page.tsx` to display all blog posts
 
-2. [ ] **Create the blog post detail page**
-   - [ ] Create `src/app/blog/[slug]/page.tsx` to display a single blog post
+2. [x] **Create the blog post detail page**
+   - [x] Create `src/app/blog/[slug]/page.tsx` to display a single blog post
 
-3. [ ] **Create a Not Found page**
-   - [ ] Create `src/app/blog/not-found.tsx`
+3. [x] **Create a Not Found page**
+   - [x] Create `src/app/blog/not-found.tsx`
 
 ## 5. Update the Homepage
 
-1. [ ] **Update the homepage to showcase recent blog posts**
-   - [ ] Update `src/app/page.tsx`:
+1. [x] **Update the homepage to showcase recent blog posts**
+   - [x] Update `src/app/page.tsx`:
 
 ## 6. Create Layout and Navigation
 
-1. [ ] **Update the root layout**
-   - [ ] Update `src/app/layout.tsx`, this is an example of a root layout:
+1. [x] **Update the root layout**
+   - [x] Update `src/app/layout.tsx`, this is an example of a root layout:
      ```typescript
      import './globals.css';
      import type { Metadata } from 'next';
@@ -248,14 +248,14 @@ Go through each task in the .cursor-tasks file. After you complete each task, up
 
 ## 7. Configure Database and Create Initial Content
 
-1. [ ] **Set up Supabase database**
-   - [ ] Create a new Supabase project if you haven't already:
+1. [x] **Set up Supabase database**
+   - [x] Create a new Supabase project if you haven't already:
      - Go to https://app.supabase.com and sign in
      - Click "New Project"
      - Enter a project name and database password
      - Choose the region closest to you
      - Click "Create new project"
-   - [ ] Run the SQL setup script in the Supabase SQL editor:
+   - [x] Run the SQL setup script in the Supabase SQL editor:
      - In your Supabase project dashboard, click on "SQL Editor" in the left sidebar
      - Click the "New Query" button in the top right corner
      - Paste the entire SQL script below into the editor
