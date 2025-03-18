@@ -10,108 +10,97 @@ A fullstack blog template built with Next.js and Supabase.
 - 📱 Responsive design
 - 🔍 SEO optimized
 
-## Getting Started
+## Setup Instructions
+
+This project provides two setup scripts - one for Unix-based systems (macOS, Linux) and one for Windows.
 
 ### Prerequisites
 
 - Node.js 20+ (specified in .nvmrc)
-- Supabase account
+- npm
+- Supabase account (free tier available)
 
-### Installation
+### Option 1: Setup for macOS/Linux Users
 
 1. Clone this repository
-2. Run the initial setup script:
+2. Make the setup script executable:
    ```bash
-   nvm use
-
    chmod +x setup.sh
-
+   ```
+3. Run the setup script:
+   ```bash
    ./setup.sh
    ```
-3. Start the development server:
+4. Set up your Supabase environment variables:
+   - Create a project in Supabase
+   - Copy your Supabase URL and anon key
+   - Update `.env.local` with your Supabase credentials
+
+5. Start the development server:
    ```bash
    npm run dev
    ```
 
-### Implementing with Cursor
+### Option 2: Setup for Windows Users
 
-This template is designed to work with the Cursor IDE and its AI agent (composer). To get started:
+1. Clone this repository
+2. Open PowerShell with administrator privileges
+3. You may need to set the execution policy to run the script:
+   ```powershell
+   Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+   ```
+4. Run the PowerShell setup script:
+   ```powershell
+   .\setup.ps1
+   ```
+5. Set up your Supabase environment variables:
+   - Create a project in Supabase
+   - Copy your Supabase URL and anon key
+   - Update `.env.local` with your Supabase credentials
 
-1. **Run with Cursor Composer**
-   - Open Cursor IDE
-   - Press `Cmd + I` (Mac) or `Ctrl + I` (Windows/Linux) to open the Cursor Composer
-     - modify the chat mode to 'Agent': ![screenshot](./agent_toggle.png)
-   - Add both `.cursor/rules/base.mdc` and `.cursor/tasks/init.md` to the composer context
-   - Use the following prompt:
-     ```
-     Go through each task in the init.md file. After you complete each task,
-     update the file to check off any task. Run builds and commits after each task.
-     Continue with each task until you have checked off each one. After each story,
-     do not take a screenshot. If you need more detail about a task, you can gather
-     relevant files and pass the FULL file to the research agent.
-     ```
+6. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
-2. **Monitor Progress**
-   - The agent will work through each task in order
-   - Tasks will be checked off automatically as they're completed
-   - Commits will be made after each task
-   - You can monitor progress in the cursor-tasks.md file
+## Database Setup
 
-## Ideal Project Structure
+After setting up your Supabase project, you'll need to create the necessary tables and seed data:
+
+1. In your Supabase dashboard, navigate to the SQL Editor
+2. Create the required tables by running the SQL scripts in the `.cursor/tasks/init.md` file
+3. Seed the database with sample data using the provided queries
+
+## Project Structure
 
 ```
 src/
-├── app/                 # Next.js App Router
-│   ├── blog/            # Blog routes
-│   ├── api/             # API routes
-├── components/          # React components
-│   ├── ui/              # Reusable UI components
-│   ├── blog/            # Blog-specific components
-├── lib/                 # Utility functions
-│   ├── supabase.ts      # Supabase client
-│   ├── utils.ts         # Utility functions
-│   ├── api.ts           # API helpers
-│   ├── database.types.ts # Supabase database types
+├── app/                    # Next.js App Router
+│   ├── blog/               # Blog routes
+│   │   ├── [slug]/         # Individual blog post route
+│   │   └── page.tsx        # Blog listing page
+│   ├── layout.tsx          # Root layout
+│   └── page.tsx            # Homepage
+├── components/             # React components
+│   ├── blog/               # Blog-specific components
+│   │   ├── markdown-renderer.tsx
+│   │   ├── post-card.tsx
+│   │   ├── post-grid.tsx
+│   │   └── post-header.tsx
+│   ├── ui/                 # Shadcn UI components
+│   ├── footer.tsx          # Site footer
+│   └── header.tsx          # Site header
+└── lib/                    # Utility functions
+    ├── api.ts              # API functions for Supabase
+    ├── database.ts         # TypeScript types for database
+    ├── supabase.ts         # Supabase client initialization
+    └── utils.ts            # General utility functions
 ```
 
-## Database Schema
+## Contributing
 
-The template uses the following database schema in Supabase:
-
-### Categories Table
-
-| Column     | Type                    | Description                    |
-|------------|-------------------------|--------------------------------|
-| id         | UUID                    | Primary key (auto-generated)   |
-| name       | TEXT                    | Category name                  |
-| slug       | TEXT                    | Unique URL-friendly identifier |
-| created_at | TIMESTAMP WITH TIME ZONE| Creation timestamp             |
-
-### Posts Table
-
-| Column         | Type                    | Description                         |
-|---------------|-------------------------|--------------------------------------|
-| id            | UUID                    | Primary key (auto-generated)         |
-| title         | TEXT                    | Post title                           |
-| slug          | TEXT                    | Unique URL-friendly identifier       |
-| content       | TEXT                    | Main post content                    |
-| featured_image| TEXT                    | URL to featured image                |
-| excerpt       | TEXT                    | Short post summary                   |
-| category_id   | UUID                    | Foreign key to categories table      |
-| published     | BOOLEAN                 | Publication status                   |
-| published_at  | TIMESTAMP WITH TIME ZONE| Publication timestamp                |
-| created_at    | TIMESTAMP WITH TIME ZONE| Creation timestamp                   |
-| updated_at    | TIMESTAMP WITH TIME ZONE| Last update timestamp                |
-
-## Deployment
-
-This project can be deployed to Vercel:
-
-```bash
-npm run build
-npm run start
-```
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
-MIT
+This project is licensed under the MIT License.
